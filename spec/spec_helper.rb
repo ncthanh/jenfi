@@ -91,4 +91,10 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+  config.before do |_|
+    module EventHelper
+      def fire_later(event, wait: nil, wait_until: nil);end
+    end
+  end
 end
